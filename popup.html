@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>YouTube Blur</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="card">
+    <h1>▶ YouTube Blur</h1>
+    <p class="sub">Sirf blur — koi download nahi. Har option alag hai.</p>
+
+    <label class="check">
+      <input id="videoBlurCheck" type="checkbox">
+      <span><b>Video blur</b> — thumbnails aur player</span>
+    </label>
+
+    <label class="row">
+      <span>Blur kitna ho?</span>
+      <span id="blurValue">18px</span>
+    </label>
+    <input id="blurRange" type="range" min="6" max="30" step="2" value="18">
+    <div class="hints"><span>Halka</span><span>Strong</span></div>
+
+    <label class="check">
+      <input id="titlesCheck" type="checkbox">
+      <span><b>Title blur</b> — video titles</span>
+    </label>
+
+    <label class="check">
+      <input id="descCheck" type="checkbox">
+      <span><b>Description blur</b> — video ki description</span>
+    </label>
+
+    <label class="check">
+      <input id="commentsCheck" type="checkbox">
+      <span><b>Comments blur</b> — comments ka text</span>
+    </label>
+
+    <label class="check focus-check">
+      <input id="focusCheck" type="checkbox">
+      <span><b>Focus Mode</b> — Shorts, sidebar aur comments hide karo</span>
+    </label>
+    <p class="note">Focus Mode ON ho to comments hide ho jayenge, is liye Comments blur us waqt nazar nahi aayega.</p>
+
+    <div class="whitelist">
+      <div class="row"><span>Whitelist Channels</span></div>
+      <p class="note" style="text-align:left">Ye channels hamesha clear rahenge, blur nahi honge.</p>
+      <div class="wl-row">
+        <input id="whitelistInput" type="text" placeholder="Channel naam ya @handle, masalan Mr Prompt">
+        <button id="whitelistAdd" type="button">Add</button>
+      </div>
+      <ul id="whitelistList" class="wl-list"></ul>
+    </div>
+
+    <button id="reloadBtn" type="button" class="reload">↻ YouTube page reload karo</button>
+    <p class="note">Agar blur nazar na aaye to ye button dabao, ya YouTube tab me F5 dabao.</p>
+    <p id="diagStatus" class="status">Page check ho raha hai...</p>
+    <p id="status" class="status">YouTube kholo, jo option ON hai wahi blur nazar aayega. Cursor jis video par jayega, sirf woh clear hogi.</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+/* YouTube Blur v2.0 - BLUR ONLY, alag alag options */
+/* Har option ka apna class hai, ek band ho to doosra phir bhi chale. */
+
+/* ---- VIDEO BLUR: thumbnails + player ---- */
+body.yt-blur-on ytd-thumbnail,
+body.yt-blur-on ytd-thumbnail img,
+body.yt-blur-on #thumbnail img,
+body.yt-blur-on yt-lockup-view-model img,
+body.yt-blur-on yt-thumbnail-view-model img,
+body.yt-blur-on .ytThumbnailViewModelImage img,
+body.yt-blur-on .yt-lockup-view-model__content-image img,
+body.yt-blur-on a.yt-lockup-view-model__content-image img,
+body.yt-blur-on img.ytCoreImageHost,
+body.yt-blur-on img.yt-core-image,
+body.yt-blur-on a[href^="/watch"] img,
+body.yt-blur-on a[href^="/shorts"] img,
+body.yt-blur-on a[href*="/watch?v="] img,
+body.yt-blur-on video,
+body.yt-blur-on ytd-reel-video-renderer video,
+body.yt-blur-on .ytp-videowall-still-image {
+  filter: blur(var(--yt-blur-px, 18px)) brightness(0.85) !important;
+  transition: filter 0.25s ease !important;
+}
+body.yt-blur-on ytd-rich-item-renderer:hover ytd-thumbnail,
+body.yt-blur-on ytd-rich-item-renderer:hover ytd-thumbnail img,
+body.yt-blur-on ytd-rich-item-renderer:hover #thumbnail img,
+body.yt-blur-on ytd-rich-item-renderer:hover yt-lockup-view-model img,
+body.yt-blur-on ytd-rich-item-renderer:hover yt-thumbnail-view-model img,
+body.yt-blur-on ytd-rich-item-renderer:hover a[href^="/watch"] img,
+body.yt-blur-on yt-lockup-view-model:hover img,
+body.yt-blur-on yt-lockup-view-model:hover yt-thumbnail-view-model img,
+body.yt-blur-on yt-lockup-view-model:hover .ytThumbnailViewModelImage img,
+body.yt-blur-on a.yt-lockup-view-model__content-image:hover img,
+body.yt-blur-on yt-thumbnail-view-model:hover img,
+body.yt-blur-on ytd-video-renderer:hover ytd-thumbnail img,
+body.yt-blur-on ytd-video-renderer:hover yt-lockup-view-model img,
+body.yt-blur-on ytd-compact-video-renderer:hover ytd-thumbnail img,
+body.yt-blur-on ytd-compact-video-renderer:hover yt-lockup-view-model img,
+body.yt-blur-on ytd-grid-video-renderer:hover yt-lockup-view-model img,
+body.yt-blur-on ytd-reel-item-renderer:hover yt-lockup-view-model img,
+body.yt-blur-on ytd-reel-video-renderer:hover video,
+body.yt-blur-on ytd-shorts:hover video,
+body.yt-blur-on img:hover,
+body.yt-blur-on video:hover,
+body.yt-blur-on #movie_player:hover video,
+body.yt-blur-on .html5-video-player:hover video,
+body.yt-blur-on #player:hover video,
+body.yt-blur-on ytd-player:hover video {
+  filter: none !important;
+}
+
+/* ---- TITLE BLUR (azaad, video blur band ho to bhi chale) ---- */
+body.yt-blur-titles #video-title,
+body.yt-blur-titles #video-title-link,
+body.yt-blur-titles ytd-video-meta-block,
+body.yt-blur-titles ytd-channel-name,
+body.yt-blur-titles .yt-lockup-metadata-view-model__title {
+  filter: blur(6px) !important;
+  transition: filter 0.25s ease !important;
+}
+body.yt-blur-titles ytd-rich-item-renderer:hover #video-title,
+body.yt-blur-titles yt-lockup-view-model:hover .yt-lockup-metadata-view-model__title,
+body.yt-blur-titles #video-title:hover,
+body.yt-blur-titles #video-title-link:hover {
+  filter: none !important;
+}
+
+/* ---- DESCRIPTION BLUR (watch page description) ---- */
+body.yt-blur-desc #description,
+body.yt-blur-desc #description-inner,
+body.yt-blur-desc ytd-video-description,
+body.yt-blur-desc ytd-expandable-video-description-body-renderer,
+body.yt-blur-desc #description ytd-text-inline-expander,
+body.yt-blur-desc #description yt-formatted-string {
+  filter: blur(6px) !important;
+  transition: filter 0.25s ease !important;
+}
+body.yt-blur-desc #description:hover,
+body.yt-blur-desc #description-inner:hover,
+body.yt-blur-desc ytd-video-description:hover,
+body.yt-blur-desc ytd-expandable-video-description-body-renderer:hover {
+  filter: none !important;
+}
+
+/* ---- COMMENTS BLUR (comments ka text) ---- */
+body.yt-blur-comments #comments ytd-comment-thread-renderer #content-text,
+body.yt-blur-comments #comments ytd-comment-thread-renderer #comment-content,
+body.yt-blur-comments ytd-comments ytd-comment-view-model #content-text,
+body.yt-blur-comments #comments yt-formatted-string {
+  filter: blur(6px) !important;
+  transition: filter 0.25s ease !important;
+}
+body.yt-blur-comments #comments ytd-comment-thread-renderer:hover #content-text,
+body.yt-blur-comments #comments ytd-comment-thread-renderer:hover #comment-content,
+body.yt-blur-comments ytd-comments ytd-comment-view-model:hover #content-text {
+  filter: none !important;
+}
+
+/* ---- WHITELIST: whitelisted channel ki video kabhi blur nahi hogi ---- */
+body.yt-blur-on .yt-whitelisted img,
+body.yt-blur-on .yt-whitelisted video,
+body.yt-blur-on .yt-whitelisted ytd-thumbnail img,
+body.yt-blur-on .yt-whitelisted yt-lockup-view-model img,
+body.yt-blur-on .yt-whitelisted yt-thumbnail-view-model img {
+  filter: none !important;
+}
+
+/* ---- FOCUS MODE: Shorts, sidebar recommendations, comments hide ---- */
+body.yt-focus-on ytd-reel-shelf-renderer,
+body.yt-focus-on ytd-reel-video-renderer,
+body.yt-focus-on #secondary,
+body.yt-focus-on ytd-watch-next-secondary-results-renderer,
+body.yt-focus-on #related,
+body.yt-focus-on #comments,
+body.yt-focus-on ytd-comments,
+body.yt-focus-on ytd-rich-item-renderer:has(a[href^="/shorts"]),
+body.yt-focus-on ytd-rich-item-renderer:has(a[href*="/shorts/"]),
+body.yt-focus-on [title="Shorts"] {
+  display: none !important;
+}
+
+/* Diagnostic badge */
+#yt-blur-badge {
+  position: fixed !important;
+  right: 16px !important;
+  bottom: 16px !important;
+  z-index: 2147483647 !important;
+  background: #16a34a !important;
+  color: #fff !important;
+  font: bold 12px Arial, sans-serif !important;
+  padding: 7px 12px !important;
+  border-radius: 20px !important;
+  pointer-events: none !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5) !important;
+}
